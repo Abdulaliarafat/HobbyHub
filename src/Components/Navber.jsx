@@ -1,16 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router';
-import logo from '/3047.png'
-import { FaFacebook, FaFileContract, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import logo from '/25c50e104102623.Y3JvcCwyOTUyLDIzMDksNTU1LDA.png'
+import { FaFacebook, FaInstagram, FaLinkedin,} from 'react-icons/fa';
 import { IoLogoWhatsapp, IoMdContact } from 'react-icons/io';
 const Navber = () => {
     const link = (
         <>
             <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Home</NavLink></li>
-            <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md  text-white ${isActive ? 'bg-blue-400 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>All Groups
+            <li><NavLink to='' className={({ isActive }) => `ml-5 font-medium text-md  text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>All Groups
             </NavLink></li>
-            <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md   text-white ${isActive ? 'bg-blue-400 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>Create Group </NavLink></li>
-            <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md  text-white ${isActive ? 'bg-blue-400 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
+            <li><NavLink to='' className={({ isActive }) => `ml-5 font-medium text-md   text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>Create Group </NavLink></li>
+            <li><NavLink to='' className={({ isActive }) => `ml-5 font-medium text-md  text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
 
         </>
     )
@@ -33,7 +33,7 @@ const Navber = () => {
                 </div>
             </div>
             {/* main */}
-            <div className='flex'>
+            <div className='flex py-3'>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,14 +41,14 @@ const Navber = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-40 p-1 shadow">
                             {
                                 link
                             }
                         </ul>
                     </div>
                    <div className='flex justify-baseline items-center'>
-                     <img className='w-10 lg:w-30 rounded-2xl md:w-20' src={logo} alt="" />
+                     <img className='w-10 rounded-full md:w-20' src={logo} alt="" />
                     <a className="text-xl font-bold text-white ml-2"> HobbyHub</a>
                    </div>
                 </div>
