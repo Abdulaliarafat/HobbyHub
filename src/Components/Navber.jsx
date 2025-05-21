@@ -1,9 +1,29 @@
-import React from 'react';
-import { NavLink } from 'react-router';
+import React, { use } from 'react';
+import { Link, NavLink } from 'react-router';
 import logo from '/25c50e104102623.Y3JvcCwyOTUyLDIzMDksNTU1LDA.png'
-import { FaFacebook, FaInstagram, FaLinkedin,} from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, } from 'react-icons/fa';
 import { IoLogoWhatsapp, IoMdContact } from 'react-icons/io';
+import { AuthContext } from '../Authentication/AuthProvider';
+import Swal from 'sweetalert2';
 const Navber = () => {
+    const { user, logOut } = use(AuthContext)
+   
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    position: 'center',
+                    icon: "success",
+                    title: "Logout successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+               
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     const link = (
         <>
             <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Home</NavLink></li>
@@ -14,9 +34,8 @@ const Navber = () => {
 
         </>
     )
-
     return (
-        <div className="shadow-sm border p-2  bg-blue-900">
+        <div className="shadow-sm border p-2  bg-blue-900 ">
             <div className='flex justify-between items-center mb-3'>
                 <div>
                     <input type="checkbox" defaultChecked className="toggle bg-white toggle-xl md:ml-3" />
@@ -29,7 +48,9 @@ const Navber = () => {
                     <IoLogoWhatsapp color='white'></IoLogoWhatsapp>
                 </div>
                 <div >
-                    <IoMdContact  color='white' size={60}/>
+                    {
+                        user ? <Link to=''><img className='w-15 mr-3 mt-1  bg-white rounded-xl ' src={user.photoURL} alt="" /></Link> : <IoMdContact color='white' size={60} />
+                    }
                 </div>
             </div>
             {/* main */}
@@ -47,10 +68,10 @@ const Navber = () => {
                             }
                         </ul>
                     </div>
-                   <div className='flex justify-baseline items-center'>
-                     <img className='w-10 rounded-full md:w-20' src={logo} alt="" />
-                    <a className="text-xl font-bold text-white ml-2"> HobbyHub</a>
-                   </div>
+                    <div className='flex justify-baseline items-center'>
+                        <img className='w-10 rounded-full md:w-20' src={logo} alt="" />
+                        <a className="text-xl font-bold text-white ml-2"> HobbyHub</a>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -60,7 +81,9 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-blue-500 hover:rounded-2xl text-white">Login</a>
+                    {
+                        user ? <Link onClick={handleSignOut} className="btn bg-blue-500 hover:rounded-2xl text-white">LogOut</Link> : <Link to='/authlayout/login' className="btn bg-blue-500 hover:rounded-2xl text-white">Login</Link>
+                    }
                 </div>
             </div>
         </div>

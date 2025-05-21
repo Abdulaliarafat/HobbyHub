@@ -23,7 +23,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <h1 className='font-bold text-xl text-white mb-4 md:text-center'>Navigate to </h1>
+                    <h1 className='font-bold text-xl text-white mb-4 md:text-center'>Explore Us</h1>
                     <div className=' md:text-center'>
                         <ul className=' space-y-5'>
                             <li><NavLink to='/' className='hover:underline font-bold text-white'>Home</NavLink>
