@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const Register = () => {
     const { newUser, setUser, userProfile } = use(AuthContext)
      const navigation=useNavigate()
-     const [error,setError]=useState('')
+     const [error,setError]=useState()
     const handleRegisterFrom = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -20,7 +20,7 @@ const Register = () => {
         newUser(email, password)
             .then(result => {
                 const userRes = result.user;
-                console.log(userRes)
+                console.log(userRes.photoURL)
                 userProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         setUser({ ...userRes, displayName: name, photoURL: photo });

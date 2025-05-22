@@ -7,7 +7,6 @@ import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 const Navber = () => {
     const { user, logOut } = use(AuthContext)
-   
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -26,11 +25,11 @@ const Navber = () => {
     }
     const link = (
         <>
-            <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Home</NavLink></li>
-            <li><NavLink to='' className={({ isActive }) => `ml-5 font-medium text-md  text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>All Groups
+            <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md md:text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Home</NavLink></li>
+            <li><NavLink to='/allGroup' className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>All Groups
             </NavLink></li>
-            <li><NavLink to='' className={({ isActive }) => `ml-5 font-medium text-md   text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>Create Group </NavLink></li>
-            <li><NavLink to='' className={({ isActive }) => `ml-5 font-medium text-md  text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
+            <li><NavLink to='/createGroup' className={({ isActive }) => `ml-5 font-medium text-md   md:text-white ${isActive ? 'bg-blue-500 text-white':'hover:bg-blue-500 hover:text-white'}`}>Create group </NavLink></li>
+            <li><NavLink to='/myGroup' className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
 
         </>
     )

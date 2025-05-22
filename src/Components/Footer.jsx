@@ -28,10 +28,10 @@ const Footer = () => {
                         <ul className=' space-y-5'>
                             <li><NavLink to='/' className='hover:underline font-bold text-white'>Home</NavLink>
                             </li>
-                            <li><NavLink className='hover:underline font-bold text-white'>All Groups
+                            <li><NavLink to='/allGroup' className='hover:underline font-bold text-white'>All Groups
                             </NavLink></li>
-                            <li><NavLink className='hover:underline font-bold text-white'>Create Group</NavLink></li>
-                            <li><NavLink className='hover:underline font-bold text-white'>My Groups</NavLink></li>
+                            <li><NavLink to='/createGroup' className='hover:underline font-bold text-white'>Create Group</NavLink></li>
+                            <li><NavLink to='/myGroup' className='hover:underline font-bold text-white'>My Groups</NavLink></li>
                         </ul>
                     </div>
                 </div>

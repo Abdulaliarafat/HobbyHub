@@ -46,9 +46,8 @@ const Login = () => {
         }
     }
     const handleGoogleSignIn = () => {
-        googleSignIn()
-            .then(result => {
-                console.log(result)
+            googleSignIn()
+            .then(result => {              
                 Swal.fire({
                     position: 'center',
                     icon: "success",
@@ -59,7 +58,7 @@ const Login = () => {
                 navigation('/')
             })
             .catch(error => {
-                console.log(error)
+              
                 Swal.fire({
                     position: 'center',
                     icon: "success",
