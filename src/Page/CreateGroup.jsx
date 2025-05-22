@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Loading from '../Components/Loading';
+import Swal from 'sweetalert2';
 
 const CreateGroup = () => {
     const { user } = use(AuthContext)
@@ -23,7 +24,17 @@ const CreateGroup = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log('after save database', data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: "success",
+                        title: "Created group successfully",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                    form.reset()
+                }
             })
     }
     return (
@@ -44,11 +55,10 @@ const CreateGroup = () => {
                             <label className="label font-bold">Hobby Category</label>
                             <select name="Category" className="select w-full" required>
                                 <option value="">Select Hobby Category</option>
-                                <option value="Photography">🚴‍♀️ cycling </option>
+                                <option value="Photography">🚴‍♀️ Cycling </option>
                                 <option value="Video Gaming">🥾 Running</option>
                                 <option value="Video Gaming">🌼 Gardening</option>
                                 <option value="Fishing">🎨 Drawing & Painting</option>
-                                <option value="Running">🏃Running</option>
                                 <option value="Cooking">
                                     🍳 Cooking
                                 </option>
@@ -56,10 +66,6 @@ const CreateGroup = () => {
                                 </option>
                                 <option value="Writing">🎣 Fishing</option>
                             </select>
-                        </fieldset>
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-                            <label className="label  font-bold">Description</label>
-                            <input type="text" name='description' className="input w-full " placeholder="Enter Description" required />
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
                             <label className="label font-bold">Meeting Location
@@ -73,21 +79,25 @@ const CreateGroup = () => {
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
                             <label className="label font-bold">Start Date</label>
-                            <input type="text" name='date' className="input w-full " placeholder="Enter Start Date" required />
+                            <input type="date" name='date' className="input w-full " placeholder="Enter Start Date" required />
+                        </fieldset>
+                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+                            <label className="label font-bold">Image URL
+                            </label>
+                            <input type="text" name='photoURL' className="input w-full " placeholder="Enter Image URL" required />
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
                             <label className="label font-bold">User Name</label>
-                            <input type="text" name='name' defaultValue={user.displayName} className="input w-full " placeholder="Enter User Name" required readOnly />
+                            <input type="text" name='name' defaultValue={user.displayName} className="input w-full font-semibold bg-gray-200" placeholder="Enter User Name" required readOnly />
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
                             <label className="label font-bold">User Email</label>
-                            <input type="text" name='email' defaultValue={user.email} className="input w-full " placeholder="Enter User Email" required readOnly />
+                            <input type="text" name='email' defaultValue={user.email} className="input w-full font-semibold bg-gray-200 " placeholder="Enter User Email" required readOnly />
                         </fieldset>
                     </div>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4 mt-2">
-                        <label className="label font-bold">Image URL
-                        </label>
-                        <input type="text" name='photoURL' className="input w-full " placeholder="Enter Image URL" required />
+                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4 my-4">
+                        <label className="label  font-bold">Description</label>
+                        <input type="text" name='description' className="input w-full h-20" placeholder="Write your description here" required />
                     </fieldset>
                     <input type="submit" className='btn  bg-blue-500 text-white w-full font-bold mt-2 hover:rounded-2xl hover:bg-blue-700' value="Create group" />
                 </form>

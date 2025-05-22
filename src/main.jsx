@@ -16,24 +16,32 @@ import CreateGroup from './Page/CreateGroup.jsx';
 import Home from './Page/Home.jsx';
 import AllGroup from './Page/AllGroup.jsx';
 import MyGroup from './Page/MyGroup.jsx';
+import Loading from './Components/Loading.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     errorElement: <Error></Error>,
     children: [
-      { index: true, Component:Home },
       {
-        path:'/createGroup',
-        Component:CreateGroup,
+        index: true,
+        Component: Home,
+        loader: () => fetch('http://localhost:3000/group'),
+        HydrateFallback: Loading
       },
       {
-        path:'/allGroup',
-        Component:AllGroup
+        path: '/createGroup',
+        Component: CreateGroup,
       },
       {
-        path:"/myGroup",
-        Component:MyGroup
+        path: '/allGroup',
+        Component: AllGroup,
+        loader: () => fetch('http://localhost:3000/group'),
+        HydrateFallback: Loading
+      },
+      {
+        path: "/myGroup",
+        Component: MyGroup
       }
     ]
   },
@@ -46,8 +54,8 @@ const router = createBrowserRouter([
         Component: Login
       },
       {
-        path:'/authlayout/register',
-        Component:Register
+        path: '/authlayout/register',
+        Component: Register
       }
     ]
   },
