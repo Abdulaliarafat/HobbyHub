@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const AllGroup = () => {
     const groupData = useLoaderData()
@@ -17,7 +17,7 @@ const AllGroup = () => {
                                 <p className='font-medium text-sm'>Join date : {group.date}</p>
                                 </div>
                                 <div className=''>
-                                    <button className='btn bg-blue-500 text-white hover:rounded-2xl'>Details</button>
+                                    <Link to={`/groupLayout/${group._id}`} className='btn bg-blue-500 text-white hover:rounded-2xl'>Details</Link>
                                 </div>
                             </div>
                         </div>)

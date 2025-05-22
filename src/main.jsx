@@ -17,6 +17,7 @@ import Home from './Page/Home.jsx';
 import AllGroup from './Page/AllGroup.jsx';
 import MyGroup from './Page/MyGroup.jsx';
 import Loading from './Components/Loading.jsx';
+import GroupLayout from './Layout/GroupLayout.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,8 +41,16 @@ const router = createBrowserRouter([
         HydrateFallback: Loading
       },
       {
-        path: "/myGroup",
-        Component: MyGroup
+        path:'/groupLayout/:id',
+        Component:GroupLayout,
+        loader:({params})=>fetch(`http://localhost:3000/group/${params.id}`),
+        HydrateFallback:Loading
+      },
+      {
+        path: "/myGroup/:email",
+        loader:({params})=>fetch(`http://localhost:3000/group/${params.email}`),
+        Component: MyGroup,
+        HydrateFallback:Loading
       }
     ]
   },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FeaturedGroup = ({featuredData}) => {
    
@@ -15,7 +16,7 @@ const FeaturedGroup = ({featuredData}) => {
                                 <p className='font-medium text-sm'>Join date : {feature.date}</p>
                                 </div>
                                 <div className=''>
-                                    <button className='btn bg-blue-500 text-white hover:rounded-2xl'>Details</button>
+                                    <Link to={`/groupLayout/${feature._id}`} className='btn bg-blue-500 text-white hover:rounded-2xl'>Details</Link>
                                 </div>
                             </div>
                         </div>

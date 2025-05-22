@@ -5,8 +5,12 @@ import { FaFacebook, FaInstagram, FaLinkedin, } from 'react-icons/fa';
 import { IoLogoWhatsapp, IoMdContact } from 'react-icons/io';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
+import Loading from './Loading';
 const Navber = () => {
     const { user, logOut } = use(AuthContext)
+    if(!user){
+        return <Loading></Loading>
+    }
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -29,7 +33,7 @@ const Navber = () => {
             <li><NavLink to='/allGroup' className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>All Groups
             </NavLink></li>
             <li><NavLink to='/createGroup' className={({ isActive }) => `ml-5 font-medium text-md   md:text-white ${isActive ? 'bg-blue-500 text-white':'hover:bg-blue-500 hover:text-white'}`}>Create group </NavLink></li>
-            <li><NavLink to='/myGroup' className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
+            <li><NavLink to={`/myGroup/${user.email}`} className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
 
         </>
     )
