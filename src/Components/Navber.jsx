@@ -7,10 +7,10 @@ import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 import Loading from './Loading';
 const Navber = () => {
-    const { user, logOut } = use(AuthContext)
-    if (!user) {
-        return <Loading></Loading>
-    }
+    const { user, logOut,loading } = use(AuthContext)
+   if(loading){
+    return <Loading></Loading>
+   }
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -33,7 +33,7 @@ const Navber = () => {
             <li><NavLink to='/allGroup' className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>All Groups
             </NavLink></li>
             <li><NavLink to='/createGroup' className={({ isActive }) => `ml-5 font-medium text-md   md:text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Create group </NavLink></li>
-            <li><NavLink to={`/myGroup/${user.email}`} className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
+            <li><NavLink to={`/myGroup/${user?.email}`} className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
 
         </>
     )
@@ -56,11 +56,10 @@ const Navber = () => {
                             <img
                                 className="w-15 mr-3 mt-1 bg-white rounded-xl"
                                 src={user.photoURL}
-                                alt={user.displayName || "User"}
+                                alt=''
                             />
-                            {/* Hover name label */}
-                            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-7
-                           bg-gray-300 bg-opacity-75 text-blue-600 font-bold text-xs px-4 py-2 rounded
+                            <span className="absolute right-4 transform -translate-x-1/2 -top-1.5
+                           bg-gray-200 bg-opacity-75 text-blue-600 font-bold text-xs px-8 py-4 rounded-full
                            opacity-0 group-hover:opacity-100
                            pointer-events-none
                            whitespace-nowrap
@@ -73,7 +72,6 @@ const Navber = () => {
                     )}
                 </div>
             </div>
-            {/* main */}
             <div className='flex py-3'>
                 <div className="navbar-start">
                     <div className="dropdown">

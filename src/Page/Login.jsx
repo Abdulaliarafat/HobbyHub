@@ -1,11 +1,12 @@
 import React, { use, useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import logo from '/25c50e104102623.Y3JvcCwyOTUyLDIzMDksNTU1LDA.png'
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 
 
 const Login = () => {
+    const location=useLocation()
     const { loginUser, googleSignIn } = use(AuthContext)
     const [error,setError]=useState('')
     const navigation = useNavigate()
@@ -27,7 +28,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigation('/')
+                navigation(`${location?.state? location?.state:'/'}`)
             })
             .catch(error => {
                 console.log(error)

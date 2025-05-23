@@ -1,13 +1,9 @@
 import React, { use } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
-import Loading from '../Components/Loading';
 import Swal from 'sweetalert2';
 
 const CreateGroup = () => {
     const { user } = use(AuthContext)
-    if (!user) {
-        return <Loading></Loading>
-    }
     const handleAddGroup = (e) => {
         e.preventDefault()
         const form = e.target;

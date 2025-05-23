@@ -6,7 +6,6 @@ import FeaturedGroup from '../Components/FeaturedGroup';
 
 const Home = () => {
     const featuredData=useLoaderData()
-
     return (
         <div>
             <Banner></Banner>

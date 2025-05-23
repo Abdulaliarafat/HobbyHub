@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const FeaturedGroup = ({featuredData}) => {
-   
     return (
         <div className='max-w-5xl mx-auto my-10'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>

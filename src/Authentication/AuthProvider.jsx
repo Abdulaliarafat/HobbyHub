@@ -3,12 +3,12 @@ import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/Firebase';
 
 export const AuthContext=createContext()
-
 const provider=new GoogleAuthProvider()
 
 const AuthProvider = ({children}) => {
 const [user,setUser]=useState(null)
 const [loading,setLoading]=useState(true)
+
 console.log(user)
 
 const newUser=(email,password)=>{
@@ -50,9 +50,9 @@ const userInfo={
     setLoading,
 }
     return (
-        <AuthContext value={userInfo}>
+        <AuthContext.Provider value={userInfo}>
             {children}
-        </AuthContext>
+        </AuthContext.Provider>
     );
 };
 

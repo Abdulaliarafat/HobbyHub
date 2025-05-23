@@ -17,7 +17,7 @@ const AllGroup = () => {
                                 <p className='font-medium text-sm'>Join date : {group.date}</p>
                                 </div>
                                 <div className=''>
-                                    <Link to={`/groupLayout/${group._id}`} className='btn bg-blue-500 text-white hover:rounded-2xl'>Details</Link>
+                                    <Link to={`/groupLayout/${group._id}`} className='btn bg-blue-500 text-white hover:rounded-2xl'>See more</Link>
                                 </div>
                             </div>
                         </div>)
