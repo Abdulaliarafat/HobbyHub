@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import Loading from './Loading';
 const Navber = () => {
     const { user, logOut } = use(AuthContext)
-    if(!user){
+    if (!user) {
         return <Loading></Loading>
     }
     const handleSignOut = () => {
@@ -21,7 +21,7 @@ const Navber = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-               
+
             })
             .catch(error => {
                 console.log(error)
@@ -32,7 +32,7 @@ const Navber = () => {
             <li><NavLink to='/' className={({ isActive }) => `ml-5 font-medium text-md md:text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Home</NavLink></li>
             <li><NavLink to='/allGroup' className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>All Groups
             </NavLink></li>
-            <li><NavLink to='/createGroup' className={({ isActive }) => `ml-5 font-medium text-md   md:text-white ${isActive ? 'bg-blue-500 text-white':'hover:bg-blue-500 hover:text-white'}`}>Create group </NavLink></li>
+            <li><NavLink to='/createGroup' className={({ isActive }) => `ml-5 font-medium text-md   md:text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Create group </NavLink></li>
             <li><NavLink to={`/myGroup/${user.email}`} className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
 
         </>
@@ -50,10 +50,27 @@ const Navber = () => {
                     <FaLinkedin color='white'></FaLinkedin>
                     <IoLogoWhatsapp color='white'></IoLogoWhatsapp>
                 </div>
-                <div >
-                    {
-                        user ? <Link to=''><img className='w-15 mr-3 mt-1  bg-white rounded-xl ' src={user.photoURL} alt="" /></Link> : <IoMdContact color='white' size={60} />
-                    }
+                <div>
+                    {user ? (
+                        <Link to="" className="relative group inline-block">
+                            <img
+                                className="w-15 mr-3 mt-1 bg-white rounded-xl"
+                                src={user.photoURL}
+                                alt={user.displayName || "User"}
+                            />
+                            {/* Hover name label */}
+                            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-7
+                           bg-gray-300 bg-opacity-75 text-blue-600 font-bold text-xs px-4 py-2 rounded
+                           opacity-0 group-hover:opacity-100
+                           pointer-events-none
+                           whitespace-nowrap
+                           transition-opacity duration-300">
+                                {user.displayName}
+                            </span>
+                        </Link>
+                    ) : (
+                        <IoMdContact color="white" size={60} />
+                    )}
                 </div>
             </div>
             {/* main */}

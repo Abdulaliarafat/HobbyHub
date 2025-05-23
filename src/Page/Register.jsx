@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const Register = () => {
     const { newUser, setUser, userProfile } = use(AuthContext)
      const navigation=useNavigate()
-     const [error,setError]=useState()
+     const [error,setError]=useState('')
     const handleRegisterFrom = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -17,6 +17,11 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password)
         // createUser
+         const passwordRegExp=/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
+            if(passwordRegExp.test(password)===false){
+                setError('Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.')
+                return
+            }
         newUser(email, password)
             .then(result => {
                 const userRes = result.user;
@@ -42,17 +47,12 @@ const Register = () => {
                 console.log(error)
                 Swal.fire({
                     position: 'center',
-                    icon: "success",
+                    icon: "error",
                     title: "Please registration first ?",
                     showConfirmButton: false,
                     timer: 1500
                 });
             })
-             const passwordRegExp=/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
-            if(passwordRegExp.test(password)===false){
-                setError('Password must be at least 6 characters long and include at least one uppercase and one lowercase letter.')
-                return
-            }
     }
     return (
         <div>

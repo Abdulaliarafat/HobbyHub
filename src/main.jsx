@@ -43,12 +43,12 @@ const router = createBrowserRouter([
       {
         path:'/groupLayout/:id',
         Component:GroupLayout,
-        loader:({params})=>fetch(`http://localhost:3000/group/${params.id}`),
+        loader:({params})=>fetch(`http://localhost:3000/group/id/${params.id}`),
         HydrateFallback:Loading
       },
       {
         path: "/myGroup/:email",
-        loader:({params})=>fetch(`http://localhost:3000/group/${params.email}`),
+        loader:({params})=>fetch(`http://localhost:3000/group/email/${params.email}`),
         Component: MyGroup,
         HydrateFallback:Loading
       }
