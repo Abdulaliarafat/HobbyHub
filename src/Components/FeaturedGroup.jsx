@@ -3,7 +3,9 @@ import { Link } from 'react-router';
 
 const FeaturedGroup = ({featuredData}) => {
     return (
-        <div className='max-w-5xl mx-auto my-10'>
+        <div className='max-w-5xl mx-auto my-15'>
+            <h1 className='text-2xl font-bold text-center'>Featured groups</h1>
+            <p className='text-center font-medium text-md text-gray-600 text-balance mt-2'>Hobbies are fun activities we enjoy in our free time, like reading, painting, or gardening.</p>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                 {
                     featuredData.map(feature=>

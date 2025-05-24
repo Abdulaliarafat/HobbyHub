@@ -19,6 +19,7 @@ import MyGroup from './Page/MyGroup.jsx';
 import Loading from './Components/Loading.jsx';
 import GroupLayout from './Layout/GroupLayout.jsx';
 import PrivateRouter from './Authentication/PrivateRouter.jsx';
+import UpdateGroup from './Layout/UpdateGroup.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,36 +29,42 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch('http://localhost:3000/group'),
+        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group'),
         HydrateFallback: Loading
       },
       {
         path: '/createGroup',
-       element:<PrivateRouter>
-        <CreateGroup></CreateGroup>
-       </PrivateRouter>,
+        element: <PrivateRouter>
+          <CreateGroup></CreateGroup>
+        </PrivateRouter>,
       },
       {
         path: '/allGroup',
         Component: AllGroup,
-        loader: () => fetch('http://localhost:3000/group'),
+        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group'),
         HydrateFallback: Loading
       },
       {
-        path:'/groupLayout/:id',
-        element:<PrivateRouter>
-         <GroupLayout></GroupLayout>   
+        path: '/groupLayout/:id',
+        element: <PrivateRouter>
+          <GroupLayout></GroupLayout>
         </PrivateRouter>,
-        loader:({params})=>fetch(`http://localhost:3000/group/id/${params.id}`),
-        HydrateFallback:Loading
+        loader: ({ params }) => fetch(`https://assignment-server-10-lovat.vercel.app/group/id/${params.id}`),
+        HydrateFallback: Loading
       },
       {
         path: "/myGroup/:email",
-        loader:({params})=>fetch(`http://localhost:3000/group/email/${params.email}`),
-        element:<PrivateRouter>
+        loader: ({ params }) => fetch(`https://assignment-server-10-lovat.vercel.app/group/email/${params.email}`),
+        element: <PrivateRouter>
           <MyGroup></MyGroup>
         </PrivateRouter>,
-        HydrateFallback:Loading
+        HydrateFallback: Loading,
+      },
+      {
+        path: '/updateGroup/:id',
+        loader: ({ params }) => fetch(`https://assignment-server-10-lovat.vercel.app/group/id/${params.id}`),
+        Component: UpdateGroup,
+        HydrateFallback: Loading
       }
     ]
   },

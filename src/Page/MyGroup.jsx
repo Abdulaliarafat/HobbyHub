@@ -1,13 +1,48 @@
-import React, { use } from 'react';
-import { useLoaderData } from 'react-router';
+import React, { use, useState } from 'react';
+import { Link, useLoaderData } from 'react-router';
 import Loading from '../Components/Loading';
 import { AuthContext } from '../Authentication/AuthProvider';
+import Swal from 'sweetalert2';
 
 const MyGroup = () => {
-    const {loading}=use(AuthContext)
-    const myData = useLoaderData()
-    if(loading){
+    const { loading } = use(AuthContext)
+    const mainMyData = useLoaderData()
+    const [myData,setMyData]=useState(mainMyData)
+    console.log(myData)
+    if (loading) {
         return <Loading></Loading>
+    }
+    const handleDeleteGroup = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            console.log(result.isConfirmed)
+            if (result.isConfirmed) {
+                // DELETE..
+                fetch(`https://assignment-server-10-lovat.vercel.app/group/id/${id}`,{
+                    method:'DELETE'
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                   if(data.deletedCount){
+                    const remainngGroup=myData.filter(data=>data._id !== id);
+                    setMyData(remainngGroup)
+                      Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+                   }
+                })
+               
+            }
+        });
     }
     return (
         <div className='max-w-5xl mx-auto px-2'>
@@ -58,10 +93,10 @@ const MyGroup = () => {
                                     {data?.date}
                                 </td>
                                 <td className="block md:table-cell p-2 space-y-2 md:space-y-1">
-                                    <button className="w-full md:w-auto bg-blue-800 hover:bg-blue-600 text-white btn btn-sm md:btn-md rounded-md">
+                                    <Link to={`/updateGroup/${data?._id}`} className="w-full md:w-auto bg-blue-800 hover:bg-blue-600 text-white btn btn-sm md:btn-md rounded-md">
                                         Update
-                                    </button>
-                                    <button className="w-full md:w-auto bg-red-700 hover:bg-red-600 text-white btn btn-sm md:btn-md rounded-md px-5">
+                                    </Link>
+                                    <button onClick={() => { handleDeleteGroup(data?._id) }} className="w-full md:w-auto bg-red-700 hover:bg-red-600 text-white btn btn-sm md:btn-md rounded-md px-5">
                                         Delete
                                     </button>
                                 </td>
