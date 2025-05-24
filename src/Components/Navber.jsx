@@ -6,11 +6,13 @@ import { IoLogoWhatsapp, IoMdContact } from 'react-icons/io';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 import Loading from './Loading';
+import ToggleBtn from './ToggleBtn';
 const Navber = () => {
     const { user, logOut,loading } = use(AuthContext)
    if(loading){
     return <Loading></Loading>
    }
+
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -41,7 +43,7 @@ const Navber = () => {
         <div className="shadow-sm border p-2  bg-blue-900 ">
             <div className='flex justify-between items-center mb-3'>
                 <div>
-                    <input type="checkbox" defaultChecked className="toggle bg-white toggle-xl md:ml-3" />
+                    <ToggleBtn></ToggleBtn>
                 </div>
                 <div className='flex justify-center items-center gap-1 md:gap-3'>
                     <h1 className='font-semibold text-white'>Follow on :</h1>

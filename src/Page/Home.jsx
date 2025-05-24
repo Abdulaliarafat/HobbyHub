@@ -8,7 +8,7 @@ import Choose from '../Components/Choose';
 const Home = () => {
     const featuredData=useLoaderData()
     return (
-        <div>
+        <div className='dark:bg-gray-900 dark:text-white pb-5'>
             <Banner></Banner>
             <FeaturedGroup featuredData={featuredData}></FeaturedGroup>
             <Choose></Choose>

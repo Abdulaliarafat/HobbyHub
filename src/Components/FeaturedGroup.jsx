@@ -5,7 +5,7 @@ const FeaturedGroup = ({featuredData}) => {
     return (
         <div className='max-w-5xl mx-auto my-15'>
             <h1 className='text-2xl font-bold text-center'>Featured groups</h1>
-            <p className='mb-3 text-center font-medium text-md text-gray-600 text-balance mt-2'>Hobbies are fun activities we enjoy in our free time, like reading, painting, or gardening.</p>
+            <p className='dark:text-white mb-3 text-center font-medium text-md text-gray-600 text-balance mt-2'>Hobbies are fun activities we enjoy in our free time, like reading, painting, or gardening.</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     featuredData.map(feature=>
@@ -14,8 +14,7 @@ const FeaturedGroup = ({featuredData}) => {
                             <div className='flex justify-around items-center'>
                                 <div className=''>
                                     <p className='font-semibold text-lg mb-1'>Name : {feature.groupname}</p>
-                                <p className='font-medium text-sm'>Join date : {new Date(feature.date).toLocaleDateString()}
-
+                                <p className='font-medium text-sm'>Join date : {feature.date}
                                 </p>
                                 </div>
                                 <div className=''>
