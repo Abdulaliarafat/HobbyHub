@@ -1,18 +1,15 @@
 import React, { use } from 'react';
-const ChoosePro = fetch('/choose.json').then(res => res.json())
-const Choose = () => {
-    const choose = use(ChoosePro)
-    // console.log(choose)
+ const comunictePromise=fetch('/Connection.json').then(res=>res.json())
+const Connection = () => {
+    const ComData=use(comunictePromise)
+    console.log(ComData);
     return (
         <div className='max-w-5xl mx-auto my-10'>
-            <h1 className='text-2xl font-bold text-center'>Grouping Places
-                            </h1 >
-                            <p className='dark:text-white text-center font-medium text-md text-gray-600 text-balance mt-2'> Grouping places helps organize locations by similarities,<br /> making it easier to study and understand geography</p>
-            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3 mt-5 '>
-                
+            <h1 className='font-bold text-2xl text-center'>Understanding Collaboration</h1>
+            <p className='font-medium text-gray-500 dark:text-white text-center text-balance'>Collaboration means sharing ideas, respecting others, and working together efficiently.</p>
+            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3 mt-5'>
                 {
-                    choose.map(data =>
-                        <div key={data.id} className='p-5 bg-blue-50 shadow-2xl rounded-lg'>
+                ComData.map(data=> <div key={data.id} className=' rounded-lg p-5 bg-blue-50 shadow-2xl'>
                             
                              <div>
                                 <img className='mx-auto w-70 h-40 rounded-2xl object-cover' src={data.img} alt="" />
@@ -23,12 +20,11 @@ const Choose = () => {
                                  <button className='btn bg-blue-600 text-white hover:rounded-2xl'>Video</button>
                                </a>
                             </div>
-                           </div>
-                    )
+                           </div>)
                 }
             </div>
         </div>
     );
 };
 
-export default Choose;
+export default Connection;

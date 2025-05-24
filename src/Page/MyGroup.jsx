@@ -5,11 +5,11 @@ import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 
 const MyGroup = () => {
-    const { loading } = use(AuthContext)
+    const { user } = use(AuthContext)
     const mainMyData = useLoaderData()
     const [myData,setMyData]=useState(mainMyData)
     console.log(myData)
-    if (loading) {
+    if (!user) {
         return <Loading></Loading>
     }
     const handleDeleteGroup = (id) => {

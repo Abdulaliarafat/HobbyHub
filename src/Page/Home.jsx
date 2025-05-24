@@ -3,6 +3,7 @@ import Banner from '../Components/Banner';
 import { useLoaderData } from 'react-router';
 import FeaturedGroup from '../Components/FeaturedGroup';
 import Choose from '../Components/Choose';
+import Connection from '../Components/Connection';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <FeaturedGroup featuredData={featuredData}></FeaturedGroup>
             <Choose></Choose>
+            <Connection></Connection>
         </div>
     );
 };

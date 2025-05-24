@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/hxM1Bdf2/comunication.jpg",
+    "title": "Communication",
+    "link": "https://youtu.be/lg48Bi9DA54?si=uT4qoVEBcS3dyOfd"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/Y7ghVXPt/behaivior.jpg",
+    "title": "Behavior",
+    "link": "https://youtu.be/kARkOdRHaj8?si=CpzMpExQIQBx44So"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/k6WDgQNT/provacy.jpg",
+    "title": "Privacy",
+    "link": "https://youtu.be/2iPDpV8ojHA?si=Kj2qawENkDr7QWm9"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/v62YJ9SJ/friendly.jpg",
+    "title": "Friendly",
+    "link": "https://youtu.be/QfWgKZzsuMc?si=7vCpIsaBQdsnhRi6"
+  }
+]
