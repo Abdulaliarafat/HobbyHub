@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group'),
+        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group/latest'),
         HydrateFallback: Loading
       },
       {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/allGroup',
         Component: AllGroup,
-        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group'),
+        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group/all'),
         HydrateFallback: Loading
       },
       {

@@ -2,10 +2,15 @@ import React, { use } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
+import Loading from '../Components/Loading';
 
 
 const CreateGroup = () => {
     const navigate=useNavigate()
+    const {loading}=use(AuthContext)
+    if(loading){
+        return <Loading></Loading>
+    }
     const { user } = use(AuthContext)
     const handleAddGroup = (e) => {
         e.preventDefault()
