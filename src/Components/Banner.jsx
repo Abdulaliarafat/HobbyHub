@@ -9,6 +9,8 @@ import img3 from '/group-friends-enjoying-fishing-trip_1022456-198343.avif'
 import img4 from '/img-4.jpg'
 import img5 from '/male-reading.jpg'
 import { Navigation, Pagination } from 'swiper/modules';
+import { Typewriter } from 'react-simple-typewriter'
+
 const Banner = () => {
     return (
         <div className=''>
@@ -24,7 +26,19 @@ const Banner = () => {
                         <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-72 ' src={img1} alt="slide-1" />
                         <div className='absolute right-35 bottom-25 space-y-2'>
                             <h1 className='font-bold text-4xl text-white'>The Thrill of Outdoor <br /> Cycling Adventures</h1>
-                            <p className='font-bold text-lg  text-white'>Cycling through nature refreshes my mind and brstrengthens my body daily</p>
+                            <p className='font-bold text-lg  text-white'>
+                                <span style={{ color: 'white', fontWeight: 'bold' }}>
+                                    <Typewriter
+                                        words={["Cycling through nature refreshes my mind and brstrengthens my body daily"]}
+                                        loop={5}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={70}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -33,25 +47,61 @@ const Banner = () => {
                         <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-72 ' src={img2} alt="slide-1" />
                         <div className='absolute right-35 bottom-25 space-y-2 '>
                             <h1 className='font-bold text-4xl text-white'> Discover Freedom on Remote <br /> Hiking Trails</h1>
-                            <p className='font-bold text-lg  text-white'>Hiking uphill rewards effort with peace, views, and total clarity.</p>
+                            <p className='font-bold text-lg  text-white'>
+                                <span style={{ color: 'white', fontWeight: 'bold' }}>
+                                    <Typewriter
+                                        words={["Hiking uphill rewards effort with peace, views, and total clarity."]}
+                                        loop={5}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={70}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                     <div className='relative'>
+                    <div className='relative'>
                         <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-72  ' src={img3} alt="slide-1" />
                         <div className='absolute right-35 bottom-20 space-y-2 mr-60'>
                             <h1 className='font-bold text-4xl text-white'>Fishing for Quiet Moments and Peace </h1>
-                            <p className='font-bold text-lg  text-white'>Fishing offers patience, reflection, calm water, and nature’s gentle rhythm.</p>
+                            <p className='font-bold text-lg  text-white'>
+                                <span style={{ color: 'white', fontWeight: 'bold' }}>
+                                    <Typewriter
+                                        words={["Fishing offers patience, reflection, calm water, and nature’s gentle rhythm."]}
+                                        loop={5}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={70}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                   <div className='relative'>
+                    <div className='relative'>
                         <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-72 ' src={img4} alt="slide-1" />
                         <div className='absolute right-35 bottom-25 space-y-2  mr-25'>
                             <h1 className='font-bold text-4xl text-white'> Climbing High to Conquer Every Challenge</h1>
-                            <p className='font-bold text-lg  text-white'>Climbing teaches strength, focus, trust, and celebrates small bold progress.</p>
+                            <p className='font-bold text-lg  text-white'>
+                                <span style={{ color: 'white', fontWeight: 'bold' }}>
+                                    <Typewriter
+                                        words={["Climbing teaches strength, focus, trust, and celebrates small bold progress."]}
+                                        loop={5}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={70}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -60,7 +110,19 @@ const Banner = () => {
                         <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-72 ' src={img5} alt="slide-1" />
                         <div className='absolute right-35 bottom-25 space-y-2 mr-24'>
                             <h1 className='font-bold text-4xl text-white'> Reading Books to Open New Worlds</h1>
-                            <p className='font-bold text-lg  text-white text-balance'>Reading inspires imagination, expands knowledge, and brings comfort every time.</p>
+                            <p className='font-bold text-lg  text-white text-balance'>
+                                <span style={{ color: 'white', fontWeight: 'bold' }}>
+                                    <Typewriter
+                                        words={["Reading inspires imagination, expands knowledge, and brings comfort every time."]}
+                                        loop={5}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={70}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </SwiperSlide>
