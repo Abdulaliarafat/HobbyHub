@@ -5,7 +5,7 @@ import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Register = () => {
-    const { newUser, setUser, userProfile } = use(AuthContext)
+    const { newUser, setUser, userProfile} = use(AuthContext)
      const navigation=useNavigate()
      const [error,setError]=useState('')
     const handleRegisterFrom = (e) => {

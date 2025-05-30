@@ -3,13 +3,11 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import logo from '/25c50e104102623.Y3JvcCwyOTUyLDIzMDksNTU1LDA.png'
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
-
-
 const Login = () => {
-    const location=useLocation()
     const { loginUser, googleSignIn } = use(AuthContext)
-    const [error,setError]=useState('')
-    const navigation = useNavigate()
+    const location=useLocation()
+    const [error,setError]=useState('');
+    const navigation = useNavigate();
     const handleSignIn = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -19,7 +17,7 @@ const Login = () => {
         // loginUser
         loginUser(email, password)
             .then(result => {
-                const userLog = result.user;
+                const userLog = result?.user;
                 console.log(userLog)
                 Swal.fire({
                     position: 'center',
@@ -56,7 +54,8 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigation('/')
+                 navigation(`${location?.state? location?.state:'/'}`)
+                // navigation('/')
             })
             .catch(error => {
               

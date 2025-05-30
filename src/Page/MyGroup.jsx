@@ -1,17 +1,12 @@
-import React, { use, useState } from 'react';
+import React, {  useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import Loading from '../Components/Loading';
-import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 
 const MyGroup = () => {
-    const { user } = use(AuthContext)
     const mainMyData = useLoaderData()
     const [myData,setMyData]=useState(mainMyData)
     console.log(myData)
-    if (!user) {
-        return <Loading></Loading>
-    }
     const handleDeleteGroup = (id) => {
         Swal.fire({
             title: "Are you sure?",

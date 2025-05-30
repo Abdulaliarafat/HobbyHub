@@ -4,9 +4,9 @@ import { AuthContext } from './AuthProvider';
 import Loading from '../Components/Loading';
 
 const PrivateRouter = ({children}) => {
-    const location=useLocation()
     const {loading,user}=use(AuthContext)
-
+    const location=useLocation()
+    console.log(location)
     if(loading){
         return <Loading></Loading>
     }
