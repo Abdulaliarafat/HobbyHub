@@ -1,4 +1,4 @@
-# My React App
+# HobbyHub
 
 A modern front-end web application built with:
 
