@@ -29,9 +29,9 @@ const AllGroup = () => {
 
            {/* filter and short  */}
 
-            <div className="flex justify-between mb-6 my-5">
+            <div className="flex justify-evenly lg:justify-between md:justify-around  mb-6 my-5">
                 <select value={category} onChange={e => setCategory(e.target.value)} className="border px-3 py-1 rounded">
-                    <option value="">All Categories</option>
+                    <option value="" className='font-semibold'>All Categories</option>
                     <option value="Cycling">🚴‍♀️ Cycling</option>
                     <option value="Running">🥾 Running</option>
                     <option value="Gardening">🌼 Gardening</option>

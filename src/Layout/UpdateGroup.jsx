@@ -36,7 +36,7 @@ const UpdateGroup = () => {
     }
     return (
         <div>
-            <div className='max-w-5xl mx-auto px-24 py-5 bg-gradient-to-b from-blue-400 to-gray-300 rounded-2xl shadow-2xl my-5'>
+            <div className='max-w-5xl mx-1 md:mx-auto px-4 md:px-24 py-5 bg-gradient-to-b from-blue-400 to-gray-300 rounded-2xl shadow-2xl my-5'>
                 <div className=' px-12 py-5  text-center space-y-4'>
                     <h1 className='font-bold text-white text-3xl text-balance '>Update hobby group</h1>
                     <p className='text-md font-medium text-white text-balance'>Friendly hobby group meets weekly to share skills, laughs, and creativity</p>

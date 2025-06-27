@@ -8,7 +8,7 @@ import { AuthContext } from '../Authentication/AuthProvider';
 const Footer = () => {
      const { user} = use(AuthContext)
     return (
-        <div className='mx-auto bg-gray-800'>
+        <div className='mx-auto bg-gray-700'>
             <div className='md:grid grid-cols-4 py-10 md:px-6 md:space-y-0 space-y-10 ml-4 md:ml-0'>
                 <div className='space-y-4 ml-2'>
                     <div className='md:flex justify-baseline items-center gap-2'>
