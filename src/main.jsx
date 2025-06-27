@@ -20,11 +20,12 @@ import Loading from './Components/Loading.jsx';
 import GroupLayout from './Layout/GroupLayout.jsx';
 import PrivateRouter from './Authentication/PrivateRouter.jsx';
 import UpdateGroup from './Layout/UpdateGroup.jsx';
+import SuccessStoryDetail from './Components/SuccessStoryDetail.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    ErrorBoundary:Error,
+    ErrorBoundary: Error,
     children: [
       {
         index: true,
@@ -32,6 +33,16 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:3000/group/latest'),
         HydrateFallback: Loading
       },
+      {
+        path: '/story/:id',
+        loader: async ({ params }) => {
+          const res = await fetch('/SuccessStory.json');
+          const data = await res.json();
+          return data.find(story => story.id === Number(params.id)); // ← match by ID
+        },
+        element: <SuccessStoryDetail />
+      }
+      ,
       {
         path: '/createGroup',
         element: <PrivateRouter>
@@ -41,8 +52,8 @@ const router = createBrowserRouter([
       {
         path: '/allGroup',
         Component: AllGroup,
-        loader: () => fetch('http://localhost:3000/group/all'),
-        HydrateFallback: Loading
+        // loader: () => fetch('http://localhost:3000/group/all'),
+        // HydrateFallback: Loading
       },
       {
         path: '/groupLayout/:id',
@@ -65,7 +76,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:3000/group/id/${params.id}`),
         Component: UpdateGroup,
         HydrateFallback: Loading
-      }
+      },
     ]
   },
   {

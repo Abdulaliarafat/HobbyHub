@@ -40,7 +40,7 @@ const Navber = () => {
         </>
     )
     return (
-         <div className=" shadow-sm border p-2  bg-blue-900">
+         <div className=" shadow-xl border p-3  bg-blue-900">
             <div className='flex justify-between items-center mb-3'>
                 <div>
                     <ToggleBtn></ToggleBtn>
@@ -74,7 +74,7 @@ const Navber = () => {
                     )}
                 </div>
             </div>
-            <div className='flex py-3'>
+            <div className='flex'>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

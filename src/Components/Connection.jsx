@@ -5,7 +5,7 @@ const Connection = () => {
     console.log(ComData);
     return (
         <div className='max-w-5xl mx-auto my-10'>
-            <h1 className='font-bold text-2xl text-center mb-4'>Understanding Collaboration</h1>
+            <h1 className='font-bold text-3xl text-center mb-4'>Understanding Collaboration</h1>
             <p className='font-medium text-gray-500 dark:text-white text-center text-balance'>Collaboration means sharing ideas, respecting others, and working together efficiently.</p>
             <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 mx-5'>
                 {
