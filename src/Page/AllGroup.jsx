@@ -12,7 +12,7 @@ const AllGroup = () => {
     const [sortOrder, setSortOrder] = useState('desc');
 
     useEffect(() => {
-        axios.get('http://localhost:3000/group/all', {
+        axios.get('https://y-flame-eight-20.vercel.app/group/all', {
             params: {
                 category: category || undefined,
                 sortOrder,

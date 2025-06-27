@@ -20,7 +20,7 @@ const DashMyGroup = () => {
                  console.log(result.isConfirmed)
                  if (result.isConfirmed) {
                      // DELETE..
-                     fetch(`http://localhost:3000/group/id/${id}`,{
+                     fetch(`https://y-flame-eight-20.vercel.app/group/id/${id}`,{
                          method:'DELETE'
                      })
                      .then(res=>res.json())

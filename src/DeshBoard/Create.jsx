@@ -19,7 +19,7 @@ const Create = () => {
         const newFormData = Object.fromEntries(formData.entries())
         console.log(newFormData)
         // post data
-        fetch('http://localhost:3000/group', {
+        fetch('https://y-flame-eight-20.vercel.app/group', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

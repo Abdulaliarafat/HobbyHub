@@ -27,12 +27,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    ErrorBoundary: Error,
+    hydrateFallbackElement:<Loading></Loading>,
     children: [
       {
         index: true,
         Component: Home,
-        loader: () => fetch('http://localhost:3000/group/latest'),
         HydrateFallback: Loading
       },
       {
@@ -54,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: '/allGroup',
         Component: AllGroup,
-        // loader: () => fetch('http://localhost:3000/group/all'),
+        // loader: () => fetch('https://y-flame-eight-20.vercel.app/group/all'),
         // HydrateFallback: Loading
       },
       {
@@ -62,12 +61,12 @@ const router = createBrowserRouter([
         element: <PrivateRouter>
           <GroupLayout></GroupLayout>
         </PrivateRouter>,
-        loader: ({ params }) => fetch(`http://localhost:3000/group/id/${params.id}`),
+        loader: ({ params }) => fetch(`https://y-flame-eight-20.vercel.app/group/id/${params.id}`),
         HydrateFallback: Loading
       },
       {
         path: "/myGroup/:email",
-        loader: ({ params }) => fetch(`http://localhost:3000/group/email/${params.email}`),
+        loader: ({ params }) => fetch(`https://y-flame-eight-20.vercel.app/group/email/${params.email}`),
         element: <PrivateRouter>
           <MyGroup></MyGroup>
         </PrivateRouter>,
@@ -75,7 +74,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateGroup/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/group/id/${params.id}`),
+        loader: ({ params }) => fetch(`https://y-flame-eight-20.vercel.app/group/id/${params.id}`),
         Component: UpdateGroup,
         HydrateFallback: Loading
       },
@@ -97,23 +96,26 @@ const router = createBrowserRouter([
   },
   {
     path:'/deshboard',
-    element:<PrivateRouter><DeshboardLayout></DeshboardLayout></PrivateRouter>,
+    element:<PrivateRouter>
+      <DeshboardLayout></DeshboardLayout>
+      </PrivateRouter>,
+    HydrateFallback:Loading,
     children:[
-    
       {
         path: '/deshboard/DeshallGroup',
         Component: DeshallGroup,
-        // loader: () => fetch('http://localhost:3000/group/all'),
+        // loader: () => fetch('https://y-flame-eight-20.vercel.app/group/all'),
         HydrateFallback: Loading
       },
       {
         path: '/deshboard/create',
         Component: CreateGroup,
+        hydrateFallbackElement:<Loading></Loading>
        
       },
       {
         path: '/deshboard/mygroup/:email',
-         loader: ({ params }) => fetch(`http://localhost:3000/group/email/${params.email}`),
+         loader: ({ params }) => fetch(`https://y-flame-eight-20.vercel.app/group/email/${params.email}`),
         element: <PrivateRouter>
           <MyGroup></MyGroup>
         </PrivateRouter>,

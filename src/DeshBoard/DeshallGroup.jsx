@@ -12,7 +12,7 @@ const DeshallGroup = () => {
         const [sortOrder, setSortOrder] = useState('desc');
     
         useEffect(() => {
-            axios.get('http://localhost:3000/group/all', {
+            axios.get('https://y-flame-eight-20.vercel.app/group/all', {
                 params: {
                     category: category || undefined,
                     sortOrder,
@@ -26,7 +26,7 @@ const DeshallGroup = () => {
             <h1 className='text-3xl font-bold text-center'>All groups</h1>
            {/* filter and short  */}
 
-            <div className="flex justify-evenly lg:justify-between md:justify-around  mb-6 my-5">
+            <div className="flex justify-evenly lg:justify-between md:justify-around  mb-6 my-5 md:mx-5">
                 <select value={category} onChange={e => setCategory(e.target.value)} className="border px-3 py-1 rounded">
                     <option value="" className='font-semibold'>All Categories</option>
                     <option value="Cycling">🚴‍♀️ Cycling</option>
@@ -47,12 +47,12 @@ const DeshallGroup = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-4 md:mx-0'>
                 {
                     groups.map(group =>
-                        <div key={group._id} className=' shadow-2xl rounded-xl p-5'>
+                        <div key={group._id} className='flex flex-col shadow-2xl rounded-xl px-4 py-2'>
                             <img className='w-50 h-40 object-cover rounded-2xl mb-4' src={group.photoURL} alt="" />
-                            <div className='flex justify-around items-center'>
+                            <div className='flex-1 flex justify-around items-center'>
                                 <div className=''>
-                                    <p className='font-semibold text-lg mb-1'>Name : {group.groupname}</p>
-                                    <p className='font-medium text-sm'>Join date : {group.date}</p>
+                                    <p className='font-semibold text-md mb-1'>Name : {group.groupname}</p>
+                                    <p className='font-medium text-xs'>Join date : {group.date}</p>
                                 </div>
                                 <div className=''>
                                     <Link to={`/groupLayout/${group._id}`} className='btn bg-blue-500 text-white hover:rounded-2xl'>Details</Link>

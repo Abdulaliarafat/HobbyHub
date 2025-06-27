@@ -12,7 +12,7 @@ const UpdateGroup = () => {
         const newData = Object.fromEntries(formData.entries())
         console.log(newData)
         // put data
-        fetch(`http://localhost:3000/group/id/${update._id}`, {
+        fetch(`https://y-flame-eight-20.vercel.app/group/id/${update._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
