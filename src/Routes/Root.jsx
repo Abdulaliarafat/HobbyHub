@@ -8,7 +8,7 @@ const Root = () => {
     return (
         <ThemeProvider>
             <div className=''>
-            <header>
+            <header className='sticky top-0 z-50'>
                 <Navber></Navber>
             </header>
             <main className=''>

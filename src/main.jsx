@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group/latest'),
+        loader: () => fetch('http://localhost:3000/group/latest'),
         HydrateFallback: Loading
       },
       {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/allGroup',
         Component: AllGroup,
-        loader: () => fetch('https://assignment-server-10-lovat.vercel.app/group/all'),
+        loader: () => fetch('http://localhost:3000/group/all'),
         HydrateFallback: Loading
       },
       {
@@ -49,12 +49,12 @@ const router = createBrowserRouter([
         element: <PrivateRouter>
           <GroupLayout></GroupLayout>
         </PrivateRouter>,
-        loader: ({ params }) => fetch(`https://assignment-server-10-lovat.vercel.app/group/id/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:3000/group/id/${params.id}`),
         HydrateFallback: Loading
       },
       {
         path: "/myGroup/:email",
-        loader: ({ params }) => fetch(`https://assignment-server-10-lovat.vercel.app/group/email/${params.email}`),
+        loader: ({ params }) => fetch(`http://localhost:3000/group/email/${params.email}`),
         element: <PrivateRouter>
           <MyGroup></MyGroup>
         </PrivateRouter>,
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateGroup/:id',
-        loader: ({ params }) => fetch(`https://assignment-server-10-lovat.vercel.app/group/id/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:3000/group/id/${params.id}`),
         Component: UpdateGroup,
         HydrateFallback: Loading
       }

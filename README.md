@@ -25,4 +25,4 @@ A modern front-end web application built with:
 - 🔧 React Icons
 ## 🚀 Live Demo
 
-🌐 [View JobTrac on Netlify](https://assignment-server-10-lovat.vercel.app)
+🌐 [View JobTrac on Netlify](http://localhost:3000)

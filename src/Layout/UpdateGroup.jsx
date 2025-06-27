@@ -12,7 +12,7 @@ const UpdateGroup = () => {
         const newData = Object.fromEntries(formData.entries())
         console.log(newData)
         // put data
-        fetch(`https://assignment-server-10-lovat.vercel.app/group/id/${update._id}`, {
+        fetch(`http://localhost:3000/group/id/${update._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -98,6 +98,7 @@ const UpdateGroup = () => {
                     </fieldset>
                     <input type="submit" className='btn  bg-blue-500 text-white w-full font-bold mt-2 hover:rounded-2xl hover:bg-blue-700' value="Create group" />
                 </form>
+                
             </div>
         </div>
     );

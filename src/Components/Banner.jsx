@@ -23,7 +23,7 @@ const Banner = () => {
             >
                 <SwiperSlide>
                     <div className='relative'>
-                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-75 ' src={img1} alt="slide-1" />
+                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover' src={img1} alt="slide-1" />
                         <div className='absolute md:right-50 bottom-10 md:bottom-25 space-y-2'>
                             <h1 className='font-bold text-2xl md:text-4xl text-white text-center'> The Thrill of Outdoor <br /> Cycling Adventures</h1>
                             <p className='text-center'>
@@ -44,7 +44,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='relative'>
-                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-85 ' src={img2} alt="slide-1" />
+                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover' src={img2} alt="slide-1" />
                         <div className='absolute md:right-55 bottom-10 md:bottom-25 space-y-1 '>
                             <h1 className='font-bold text-2xl md:text-4xl text-white text-center'> Discover Freedom on<br />Remote Hiking Trails</h1>
                             <p className='text-center'>
@@ -65,7 +65,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='relative'>
-                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-82  ' src={img3} alt="slide-1" />
+                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover' src={img3} alt="slide-1" />
                         <div className='absolute md:right-35 bottom-8 md:bottom-25 space-y-1 md:mr-60'>
                             <h1 className='font-bold text-2xl md:text-4xl text-white text-center '>Fishing for Quiet<br />  Moments and Peace </h1>
                             <p className='text-center'>
@@ -86,7 +86,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='relative'>
-                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-82 ' src={img4} alt="slide-1" />
+                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover' src={img4} alt="slide-1" />
                         <div className='absolute md:right-65 bottom-10 md:bottom-25 space-y-2  md:mr-25'>
                             <h1 className='font-bold text-2xl md:text-4xl text-white text-center'> Climbing High to Conquer <br />Every Challenge</h1>
                             <p className='text-center'>
@@ -107,7 +107,7 @@ const Banner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='relative'>
-                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover opacity-82 ' src={img5} alt="slide-1" />
+                        <img className='w-[500px] md:w-full h-[300px] md:h-[500px] object-cover' src={img5} alt="slide-1" />
                         <div className='absolute md:right-65 bottom-10 md:bottom-25 space-y-2 md:mr-24'>
                             <h1 className='font-bold text-2xl md:text-4xl text-white text-center'> Reading Books to Open <br /> New Worlds</h1>
                             <p className='text-center'>

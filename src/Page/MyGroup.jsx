@@ -20,7 +20,7 @@ const MyGroup = () => {
             console.log(result.isConfirmed)
             if (result.isConfirmed) {
                 // DELETE..
-                fetch(`https://assignment-server-10-lovat.vercel.app/group/id/${id}`,{
+                fetch(`http://localhost:3000/group/id/${id}`,{
                     method:'DELETE'
                 })
                 .then(res=>res.json())

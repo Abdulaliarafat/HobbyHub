@@ -5,10 +5,10 @@ const Choose = () => {
     // console.log(choose)
     return (
         <div className='max-w-5xl mx-auto my-10'>
-            <h1 className='text-2xl font-bold text-center'>Grouping Places
+            <h1 className='text-2xl font-bold text-center mb-4'>Grouping Places
                             </h1 >
                             <p className='dark:text-white text-center font-medium text-md text-gray-600 text-balance mt-2'> Grouping places helps organize locations by similarities,<br /> making it easier to study and understand geography</p>
-            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-3 mt-5 '>
+            <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 mx-5 '>
                 
                 {
                     choose.map(data =>

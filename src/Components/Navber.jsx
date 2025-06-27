@@ -40,7 +40,7 @@ const Navber = () => {
         </>
     )
     return (
-        <div className="shadow-sm border p-2  bg-blue-900 ">
+         <div className=" shadow-sm border p-2  bg-blue-900">
             <div className='flex justify-between items-center mb-3'>
                 <div>
                     <ToggleBtn></ToggleBtn>

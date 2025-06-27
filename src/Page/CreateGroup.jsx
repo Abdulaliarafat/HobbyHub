@@ -19,7 +19,7 @@ const CreateGroup = () => {
         const newFormData = Object.fromEntries(formData.entries())
         console.log(newFormData)
         // post data
-        fetch('https://assignment-server-10-lovat.vercel.app/group', {
+        fetch('http://localhost:3000/group', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
