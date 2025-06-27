@@ -21,6 +21,8 @@ import GroupLayout from './Layout/GroupLayout.jsx';
 import PrivateRouter from './Authentication/PrivateRouter.jsx';
 import UpdateGroup from './Layout/UpdateGroup.jsx';
 import SuccessStoryDetail from './Components/SuccessStoryDetail.jsx';
+import DeshboardLayout from './Layout/DeshboardLayout.jsx';
+import DeshallGroup from './DeshBoard/DeshallGroup.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -93,6 +95,33 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'/deshboard',
+    element:<PrivateRouter><DeshboardLayout></DeshboardLayout></PrivateRouter>,
+    children:[
+    
+      {
+        path: '/deshboard/DeshallGroup',
+        Component: DeshallGroup,
+        // loader: () => fetch('http://localhost:3000/group/all'),
+        HydrateFallback: Loading
+      },
+      {
+        path: '/deshboard/create',
+        Component: CreateGroup,
+       
+      },
+      {
+        path: '/deshboard/mygroup/:email',
+         loader: ({ params }) => fetch(`http://localhost:3000/group/email/${params.email}`),
+        element: <PrivateRouter>
+          <MyGroup></MyGroup>
+        </PrivateRouter>,
+        HydrateFallback: Loading,
+       
+      }
+    ]
+  }
 
 ]);
 createRoot(document.getElementById('root')).render(

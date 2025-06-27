@@ -36,6 +36,7 @@ const Navber = () => {
             </NavLink></li>
             <li><NavLink to='/createGroup' className={({ isActive }) => `ml-5 font-medium text-md   md:text-white ${isActive ? 'bg-blue-500 text-white' : 'hover:bg-blue-500 hover:text-white'}`}>Create group </NavLink></li>
             {user && <><li><NavLink to={`/myGroup/${user?.email}`} className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>My Groups </NavLink></li>
+            <li><NavLink to='/deshboard' className={({ isActive }) => `ml-5 font-medium text-md  md:text-white ${isActive ? 'bg-blue-500 text-white' : ' hover:bg-blue-500 hover:text-white'}`}>Dashboard</NavLink></li>
             </>}
         </>
     )
