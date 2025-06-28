@@ -11,9 +11,7 @@
 ---
 # Getting Started Locally
 
-# git clone 
- 
- --
+# git clone https://github.com/Abdulaliarafat/HobbyHub-Client.git
 # cd HobbyHub
 # npm install
 # npm run dev
