@@ -11,7 +11,7 @@
 ---
 # Getting Started Locally
 
-# git clone https://github.com/Abdulaliarafat/HobbyHub.git
+# git clone 
  
  --
 # cd HobbyHub
@@ -20,11 +20,9 @@
 
 ## 🌐 Live Demo
 
-🔴 HobbyHub  live Site: https://assignment-10-client.netlify.app/
+🔴 HobbyHub  live Site: https://hobbyhub-app.netlify.app
 
-🔴 HobbyHub on Vercel: https://assignment-server-10-lovat.vercel.app/
-
-🔴 GitHub repo link: https://github.com/Abdulaliarafat/HobbyHub/tree/main
+🔴 HobbyHub on Vercel: https://y-flame-eight-20.vercel.app
 
 ---
 
