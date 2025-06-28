@@ -26,15 +26,17 @@
 
 ## 🚀 Tech Stack
 
-| Technology         | Description                            |
-|--------------------|----------------------------------------|
-| ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | Front-end library |
-| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0EA5E9?style=for-the-badge&logo=tailwind-css&logoColor=white) | Utility-first CSS framework |
-| ![DaisyUI](https://img.shields.io/badge/DaisyUI-%23F4D03F?style=for-the-badge&logo=tailwind-css&logoColor=white) | Tailwind CSS component library |
-| ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-3085d6?style=for-the-badge&logo=sweetalert&logoColor=white) | Beautiful alert modals |
-| ![React Icons](https://img.shields.io/badge/React_Icons-61DAFB?style=for-the-badge&logo=react&logoColor=white) | Icon library |
-
----
+| Technology | Badge |
+|------------|--------|
+| React | ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) |
+| React Router | ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) |
+| Tailwind CSS | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0EA5E9?style=for-the-badge&logo=tailwind-css&logoColor=white) |
+| DaisyUI | ![DaisyUI](https://img.shields.io/badge/DaisyUI-%23F4D03F?style=for-the-badge&logo=tailwind-css&logoColor=white) |
+| Firebase | ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black) |
+| React Toastify | ![React Toastify](https://img.shields.io/badge/React_Toastify-444444?style=for-the-badge&logo=react&logoColor=white) |
+| React Icons | ![React Icons](https://img.shields.io/badge/React_Icons-61DAFB?style=for-the-badge&logo=react&logoColor=white) |
+| Framer Motion | ![Framer Motion](https://img.shields.io/badge/Framer_Motion-EF476F?style=for-the-badge&logo=framer&logoColor=white) |
+| Netlify | ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white) |
 
 ## ✨ Features
 
