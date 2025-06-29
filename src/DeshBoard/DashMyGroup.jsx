@@ -1,44 +1,9 @@
-import React, {  useState } from 'react';
-import { Link, useLoaderData } from 'react-router';
-import Swal from 'sweetalert2';
+import { Link, useLoaderData } from 'react-router';;
 
 const DashMyGroup = () => {
      const mainMyData = useLoaderData()
-     console.log(myData)
-         const [myData,setMyData]=useState(mainMyData)
-         
-         const handleDeleteGroup = (id) => {
-             Swal.fire({
-                 title: "Are you sure?",
-                 text: "You won't be able to revert this!",
-                 icon: "warning",
-                 showCancelButton: true,
-                 confirmButtonColor: "#3085d6",
-                 cancelButtonColor: "#d33",
-                 confirmButtonText: "Yes, delete it!"
-             }).then((result) => {
-                 console.log(result.isConfirmed)
-                 if (result.isConfirmed) {
-                     // DELETE..
-                     fetch(`https://y-flame-eight-20.vercel.app/group/id/${id}`,{
-                         method:'DELETE'
-                     })
-                     .then(res=>res.json())
-                     .then(data=>{
-                        if(data.deletedCount){
-                         const remainngGroup=myData.filter(data=>data._id !== id);
-                         setMyData(remainngGroup)
-                           Swal.fire({
-                         title: "Deleted!",
-                         text: "Your file has been deleted.",
-                         icon: "success"
-                     });
-                        }
-                     })
-                    
-                 }
-             });
-         }
+     console.log(mainMyData)
+             
     return (
         <div className='max-w-5xl mx-auto px-2'>
                    <div className="overflow-x-auto my-10 shadow-2xl p-4 rounded-xl">
@@ -50,11 +15,10 @@ const DashMyGroup = () => {
                                    <th>Category</th>
                                    <th>Member</th>
                                    <th>Join</th>
-                                   <th>Action</th>
                                </tr>
                            </thead>
                            <tbody>
-                               {myData.map((data) => (
+                               {mainMyData.map((data) => (
                                    <tr
                                        key={data?._id}
                                        className="block md:table-row mb-4 border border-gray-200 rounded-md md:border-0 md:rounded-none"
@@ -86,14 +50,6 @@ const DashMyGroup = () => {
                                        <td className="block md:table-cell p-2">
                                            <span className="md:hidden font-bold">Join Date: </span>
                                            {data?.date}
-                                       </td>
-                                       <td className="block md:table-cell p-2 space-y-2 md:space-y-1">
-                                           <Link to={`/updateGroup/${data?._id}`} className="w-full md:w-auto bg-blue-800 hover:bg-blue-600 text-white btn btn-sm md:btn-md rounded-md">
-                                               Update
-                                           </Link>
-                                           <button onClick={() => { handleDeleteGroup(data?._id) }} className="w-full md:w-auto bg-red-700 hover:bg-red-600 text-white btn btn-sm md:btn-md rounded-md px-5">
-                                               Delete
-                                           </button>
                                        </td>
                                    </tr>
                                ))}

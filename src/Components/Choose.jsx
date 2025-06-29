@@ -4,10 +4,10 @@ const Choose = () => {
     const choose = use(ChoosePro)
     // console.log(choose)
     return (
-        <div className='max-w-5xl mx-auto my-10'>
-            <h1 className='text-3xl font-bold text-center mb-4'>Grouping Places
+        <div className='max-w-5xl mx-auto my-15'>
+            <h1 className='text-3xl font-bold text-center mb-5'>Grouping Places
                             </h1 >
-                            <p className='dark:text-white text-center font-medium text-md text-gray-600 text-balance mt-2'> Grouping places helps organize locations by similarities,<br /> making it easier to study and understand geography</p>
+                            <p className='dark:text-white text-center font-medium text-md text-gray-600 text-balance mt-2 mb-10'> Grouping places helps organize locations by similarities,<br /> making it easier to study and understand geography</p>
             <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 mx-5 '>
                 
                 {

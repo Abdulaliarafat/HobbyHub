@@ -1,12 +1,11 @@
 import React, {  useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
-import Loading from '../Components/Loading';
 import Swal from 'sweetalert2';
 
 const MyGroup = () => {
-    const mainMyData = useLoaderData()
-    const [myData,setMyData]=useState(mainMyData)
-    console.log(myData)
+    const mainMyDatas = useLoaderData()
+    const [myDatas,setMyData]=useState(mainMyDatas)
+    console.log(myDatas)
     const handleDeleteGroup = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -26,7 +25,7 @@ const MyGroup = () => {
                 .then(res=>res.json())
                 .then(data=>{
                    if(data.deletedCount){
-                    const remainngGroup=myData.filter(data=>data._id !== id);
+                    const remainngGroup=myDatas.filter(data=>data._id !== id);
                     setMyData(remainngGroup)
                       Swal.fire({
                     title: "Deleted!",
@@ -54,7 +53,7 @@ const MyGroup = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {myData.map((data) => (
+                        {myDatas.map((data) => (
                             <tr
                                 key={data?._id}
                                 className="block md:table-row mb-4 border border-gray-200 rounded-md md:border-0 md:rounded-none"

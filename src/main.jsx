@@ -1,13 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
 import Root from './Routes/Root.jsx';
-import Error from './Page/Error.jsx';
 import AuthLayout from './Layout/AuthLayout.jsx';
 import Login from './Page/Login.jsx';
 import Register from './Page/Register.jsx';
@@ -23,11 +21,13 @@ import UpdateGroup from './Layout/UpdateGroup.jsx';
 import SuccessStoryDetail from './Components/SuccessStoryDetail.jsx';
 import DeshboardLayout from './Layout/DeshboardLayout.jsx';
 import DeshallGroup from './DeshBoard/DeshallGroup.jsx';
+import Error from './Page/Error.jsx';
+import DashMyGroup from './DeshBoard/DashMyGroup.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    hydrateFallbackElement:<Loading></Loading>,
+    errorElement:<Error></Error>,
     children: [
       {
         index: true,
@@ -95,12 +95,13 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path:'/deshboard',
-    element:<PrivateRouter>
+    path: '/deshboard',
+    element: <PrivateRouter>
       <DeshboardLayout></DeshboardLayout>
-      </PrivateRouter>,
-    HydrateFallback:Loading,
-    children:[
+    </PrivateRouter>,
+    errorElement:<Error></Error>,
+    HydrateFallback: Loading,
+    children: [
       {
         path: '/deshboard/DeshallGroup',
         Component: DeshallGroup,
@@ -110,17 +111,17 @@ const router = createBrowserRouter([
       {
         path: '/deshboard/create',
         Component: CreateGroup,
-        hydrateFallbackElement:<Loading></Loading>
-       
+        hydrateFallbackElement: <Loading></Loading>
+
       },
       {
         path: '/deshboard/mygroup/:email',
-         loader: ({ params }) => fetch(`https://y-flame-eight-20.vercel.app/group/email/${params.email}`),
+        loader: ({ params }) => fetch(`https://y-flame-eight-20.vercel.app/group/email/${params.email}`),
         element: <PrivateRouter>
-          <MyGroup></MyGroup>
+         <DashMyGroup></DashMyGroup>
         </PrivateRouter>,
         HydrateFallback: Loading,
-       
+
       }
     ]
   }

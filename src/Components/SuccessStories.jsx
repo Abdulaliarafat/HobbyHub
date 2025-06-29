@@ -13,8 +13,8 @@ const SuccessStories = () => {
         <div>
             <section className="py-12 bg-white dark:bg-gray-900 ">
                 <div className="max-w-5xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-2">Success Trips: Stories & Inspirations</h2>
-                    <p className="text-center text-gray-600 mb-10 dark:text-white">
+                    <h2 className="text-3xl font-bold text-center mb-5">Success Trips: Stories & Inspirations</h2>
+                    <p className="text-center text-gray-600 mb-15 dark:text-white">
                         Discover how hobbies helped real users grow skills, confidence, and community connections.
                     </p>
 

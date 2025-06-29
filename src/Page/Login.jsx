@@ -26,7 +26,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigation(`${location?.state? location?.state:'/'}`)
+                navigation(`${location?.state ? location?.state:'/'}`)
             })
             .catch(error => {
                 console.log(error)
@@ -54,7 +54,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                 navigation(`${location?.state? location?.state:'/'}`)
+                 navigation(`${location?.state ? location?.state:'/'}`)
                 // navigation('/')
             })
             .catch(error => {

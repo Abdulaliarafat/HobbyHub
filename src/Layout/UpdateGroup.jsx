@@ -50,18 +50,15 @@ const UpdateGroup = () => {
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                             <label className="label font-bold">Hobby Category</label>
-                            <select name="Category" className="select w-full" required>
+                             <select name="Category" className="select w-full" required>
                                 <option value="">Select Hobby Category</option>
-                                <option value="Photography">🚴‍♀️ Cycling </option>
-                                <option value="Video Gaming">🥾 Running</option>
-                                <option value="Video Gaming">🌼 Gardening</option>
-                                <option value="Fishing">🎨 Drawing & Painting</option>
-                                <option value="Cooking">
-                                    🍳 Cooking
-                                </option>
-                                <option value="Reading">📖 Reading
-                                </option>
-                                <option value="Writing">🎣 Fishing</option>
+                                <option value="Cycling">🚴‍♀️ Cycling </option>
+                                <option value="Running">🥾 Running</option>
+                                <option value=" Gardening">🌼 Gardening</option>
+                                <option value="Drawing and Painting">🎨 Drawing and Painting</option>
+                                <option value="Cooking"> 🍳 Cooking</option>
+                                <option value="Reading">📖 Reading</option>
+                                <option value="Reading">🎣 Fishing</option>
                             </select>
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
@@ -96,7 +93,7 @@ const UpdateGroup = () => {
                         <label className="label  font-bold">Description</label>
                         <input defaultValue={update.description} type="text" name='description' className="input w-full h-20" placeholder="Write your description here" required />
                     </fieldset>
-                    <input type="submit" className='btn  bg-blue-500 text-white w-full font-bold mt-2 hover:rounded-2xl hover:bg-blue-700' value="Create group" />
+                    <input type="submit" className='btn  bg-blue-500 text-white w-full font-bold mt-2 hover:rounded-2xl hover:bg-blue-700' value="Update group" />
                 </form>
                 
             </div>

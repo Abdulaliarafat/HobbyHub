@@ -2,15 +2,9 @@ import React, { use } from 'react';
 import { AuthContext } from '../Authentication/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
-import Loading from '../Components/Loading';
-
 
 const Create = () => {
     const navigate=useNavigate()
-    const {loading}=use(AuthContext)
-    if(loading){
-        return <Loading></Loading>
-    }
     const { user } = use(AuthContext)
     const handleAddGroup = (e) => {
         e.preventDefault()
@@ -38,7 +32,7 @@ const Create = () => {
                         timer: 2000
                     });
                     form.reset()
-                    navigate('/myGroup/:email')
+                    navigate(`/deshboard/mygroup/${user?.email}`)
                 }
             })
     }
