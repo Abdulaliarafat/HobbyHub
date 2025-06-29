@@ -50,15 +50,15 @@ const UpdateGroup = () => {
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                             <label className="label font-bold">Hobby Category</label>
-                             <select name="Category" className="select w-full" required>
+                            <select name="Category" className="select w-full" required>
                                 <option value="">Select Hobby Category</option>
-                                <option value="Cycling">🚴‍♀️ Cycling </option>
+                                <option value="Cycling">🚴‍♀️ Cycling</option>
                                 <option value="Running">🥾 Running</option>
-                                <option value=" Gardening">🌼 Gardening</option>
-                                <option value="Drawing and Painting">🎨 Drawing and Painting</option>
-                                <option value="Cooking"> 🍳 Cooking</option>
+                                <option value="Gardening">🌼 Gardening</option>
+                                <option value="Drawing">🎨 Drawing and Painting</option>
+                                <option value="Cooking">🍳 Cooking</option>
                                 <option value="Reading">📖 Reading</option>
-                                <option value="Reading">🎣 Fishing</option>
+                                <option value="Fishing">🎣 Fishing</option>
                             </select>
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
@@ -95,7 +95,7 @@ const UpdateGroup = () => {
                     </fieldset>
                     <input type="submit" className='btn  bg-blue-500 text-white w-full font-bold mt-2 hover:rounded-2xl hover:bg-blue-700' value="Update group" />
                 </form>
-                
+
             </div>
         </div>
     );
