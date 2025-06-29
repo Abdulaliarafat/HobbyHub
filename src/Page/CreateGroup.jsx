@@ -66,7 +66,7 @@ const CreateGroup = () => {
                                 <option value="Drawing and Painting">🎨 Drawing and Painting</option>
                                 <option value="Cooking"> 🍳 Cooking</option>
                                 <option value="Reading">📖 Reading</option>
-                                <option value="Reading">🎣 Fishing</option>
+                                <option value="Fishing">🎣 Fishing</option>
                             </select>
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
