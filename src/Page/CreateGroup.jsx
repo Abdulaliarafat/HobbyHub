@@ -60,16 +60,13 @@ const CreateGroup = () => {
                             <label className="label font-bold">Hobby Category</label>
                             <select name="Category" className="select w-full" required>
                                 <option value="">Select Hobby Category</option>
-                                <option value="Photography">🚴‍♀️ Cycling </option>
-                                <option value="Video Gaming">🥾 Running</option>
-                                <option value="Video Gaming">🌼 Gardening</option>
-                                <option value="Fishing">🎨 Drawing & Painting</option>
-                                <option value="Cooking">
-                                    🍳 Cooking
-                                </option>
-                                <option value="Reading">📖 Reading
-                                </option>
-                                <option value="Writing">🎣 Fishing</option>
+                                <option value="Cycling">🚴‍♀️ Cycling </option>
+                                <option value="Running">🥾 Running</option>
+                                <option value=" Gardening">🌼 Gardening</option>
+                                <option value="Drawing and Painting">🎨 Drawing and Painting</option>
+                                <option value="Cooking"> 🍳 Cooking</option>
+                                <option value="Reading">📖 Reading</option>
+                                <option value="Reading">🎣 Fishing</option>
                             </select>
                         </fieldset>
                         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
