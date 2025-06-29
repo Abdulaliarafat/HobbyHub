@@ -30,16 +30,16 @@ const AllGroup = () => {
            {/* filter and short  */}
 
             <div className="flex justify-evenly lg:justify-between md:justify-around  mb-6 my-5">
-                <select value={category} onChange={e => setCategory(e.target.value)} className="border px-3 py-1 rounded">
-                    <option value="" className='font-semibold'>All Categories</option>
-                    <option value="Cycling">🚴‍♀️ Cycling</option>
-                    <option value="Running">🥾 Running</option>
-                    <option value="Gardening">🌼 Gardening</option>
-                    <option value="Drawing">🎨 Drawing & Painting</option>
-                    <option value="Cooking">🍳 Cooking</option>
-                    <option value="Reading">📖 Reading</option>
-                    <option value="Fishing">🎣 Fishing</option>
-                </select>
+               <select name="Category" className="select w-full" required>
+                                <option value="">Select Hobby Category</option>
+                                <option value="Cycling">🚴‍♀️ Cycling </option>
+                                <option value="Running">🥾 Running</option>
+                                <option value=" Gardening">🌼 Gardening</option>
+                                <option value="Drawing and Painting">🎨 Drawing and Painting</option>
+                                <option value="Cooking"> 🍳 Cooking</option>
+                                <option value="Reading">📖 Reading</option>
+                                <option value="Reading">🎣 Fishing</option>
+                            </select>
 
                 <select value={sortOrder} onChange={e => setSortOrder(e.target.value)} className="border px-3 py-1 rounded">
                     <option value="desc">Newest First</option>
