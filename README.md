@@ -47,7 +47,8 @@
 - 🧱 Component-based React architecture for scalable UI  
 - 💡 Dark/Light mode toggle built into Navbar using DaisyUI  
 - 🧹 Smooth UI effects and animations powered by React Sweeper  
-- 🖼️ High-quality illustrations and assets from Freepik  
+- 🖼️ High-quality illustrations and assets from Freepik
+- 📊 Dashboard – Centralized view for stats, user activity, and key food insights
 
 
 ---
