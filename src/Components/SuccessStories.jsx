@@ -25,7 +25,7 @@ const SuccessStories = () => {
                                     <img
                                         src={story.photo}
                                         alt={story.name}
-                                        className="w-14 h-14 rounded-sm object-cover"
+                                        className="w-14 h-20_ rounded-sm object-cover"
                                     />
                                     <div className='flex-1'>
                                         <h4 className="text-lg font-bold dark:text-black">{story.name}</h4>

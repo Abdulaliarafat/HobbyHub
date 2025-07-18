@@ -29,7 +29,7 @@ const DeshallGroup = () => {
                     <option value="Cycling">🚴‍♀️ Cycling</option>
                     <option value="Running">🥾 Running</option>
                     <option value="Gardening">🌼 Gardening</option>
-                    <option value="Drawing">🎨 Drawing & Painting</option>
+                    <option value="Drawing and Painting">🎨 Drawing and Painting</option>
                     <option value="Cooking">🍳 Cooking</option>
                     <option value="Reading">📖 Reading</option>
                     <option value="Fishing">🎣 Fishing</option>
